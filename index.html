@@ -96,13 +96,16 @@
 
     /* Video */
     video {
-      width: 600px;
-      height: 600px;
-      border-radius: 10px;
-      box-shadow: 0 0 30px rgba(0,255,255,0.3);
-      background-color: black;
-      object-fit: cover;
-    }
+  width: 80vmin;      /* 80% of the smaller viewport dimension */
+  height: 80vmin;     /* keeps it square */
+  max-width: 600px;   /* optional max size */
+  max-height: 600px;  /* optional max size */
+  border-radius: 10px;
+  box-shadow: 0 0 30px rgba(0,255,255,0.3);
+  background-color: black;
+  object-fit: cover;
+}
+
 
     /* Song title under video */
     .song-title {
