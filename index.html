@@ -8,8 +8,8 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
 
-  <!-- Internal CSS -->
   <style>
+    /* Body */
     body {
       margin: 0;
       height: 100vh;
@@ -30,15 +30,14 @@
       color: #00ffff;
       text-align: center;
       text-shadow:
-       0 0 5px #00ffff,
-       0 0 10px #00ffff,
-       0 0 20px #00ffff,
-       0 0 40px #00ffff;
-    position: relative;
-    top: -50px; /* moves the title up 50px */
-    margin-bottom: 0; /* remove original spacing if using top */
-}
-
+        0 0 5px #00ffff,
+        0 0 10px #00ffff,
+        0 0 20px #00ffff,
+        0 0 40px #00ffff;
+      position: relative;
+      top: -50px; /* move the title higher */
+      margin-bottom: 0;
+    }
 
     /* Container for video + side texts */
     .container {
@@ -50,17 +49,14 @@
 
     /* Vertical side text */
     .side-text {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 1.8rem;
-      color: #00ffff;
-      text-shadow:
-        0 0 5px #00ffff,
-        0 0 10px #00ffff,
-        0 0 20px #00ffff;
-      writing-mode: vertical-rl;
-      transform: rotate(180deg);
+      font-family: 'Arial Black', 'Impact', sans-serif; /* thick, squarish, plain */
+      font-size: 3rem; /* much larger */
+      color: #ffffff; /* plain white */
+      text-shadow: none; /* no glow */
+      writing-mode: vertical-rl; /* vertical text */
+      transform: rotate(180deg); /* point text upwards */
       text-align: center;
-      margin: 0 40px;
+      margin: 0 80px; /* farther from video */
     }
 
     /* Video */
@@ -80,11 +76,6 @@
       right: 15px;
       font-size: 0.9rem;
       opacity: 0.7;
-    }
-
-    /* Optional: smaller right side text */
-    .side-text.right {
-      font-size: 1.6rem;
     }
   </style>
 </head>
