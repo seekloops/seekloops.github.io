@@ -32,8 +32,8 @@
     }
 
     video {
-      width: 300px;
-      height: 300px;
+      width: 600px;
+      height: 600px;
       border-radius: 10px;
       box-shadow: 0 0 20px rgba(255,255,255,0.2);
       background-color: black;
@@ -51,7 +51,24 @@
 </head>
   
 <body>
-  <h1 class="title">Seek the Looper</h1>
+ <h1 class="title">Seek the Looper</h1>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
+
+.title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 5rem;
+  color: #00ffff;
+  text-align: center;
+  text-shadow:
+     0 0 5px #00ffff,
+     0 0 10px #00ffff,
+     0 0 20px #00ffff,
+     0 0 40px #00ffff;
+}
+</style>
+
   <video controls preload="metadata">
     <source src="Video.mp4" type="video/mp4">
     Your browser does not support the video tag.
