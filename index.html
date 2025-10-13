@@ -6,13 +6,13 @@
   <title>Seek the Looper | Portfolio</title>
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Dancing+Script&display=swap" rel="stylesheet">
 
   <style>
     /* Body */
     body {
       margin: 0;
-      height: 100vh;
+      min-height: 100vh;
       background-color: #0d0d0d;
       color: #fff;
       font-family: "Inter", sans-serif;
@@ -23,21 +23,21 @@
       position: relative;
     }
 
-   .title {
-  font-family: 'Orbitron', sans-serif;
-  font-size: 5rem;
-  color: #00ffff;
-  text-align: center;
-  text-shadow:
-    0 0 5px #00ffff,
-    0 0 10px #00ffff,
-    0 0 20px #00ffff,
-    0 0 40px #00ffff;
-  position: relative;
-  top: -50px;  /* move title up */
-  left: -15px;  /* move title to the right (negative for left) */
-  margin-bottom: 0;
-}
+    /* Title */
+    .title {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 5rem;
+      color: #00ffff;
+      text-align: center;
+      text-shadow:
+        0 0 5px #00ffff,
+        0 0 10px #00ffff,
+        0 0 20px #00ffff,
+        0 0 40px #00ffff;
+      position: relative;
+      top: -50px;  
+      margin-bottom: 0;
+    }
 
     /* Container for video + side texts */
     .container {
@@ -47,27 +47,24 @@
       position: relative;
     }
 
-    /* Vertical side text */
+    /* Vertical side texts */
     .side-text {
-      font-family: 'Arial Black', 'Impact', sans-serif; /* thick, squarish, plain */
-      font-size: 4rem; /* much larger */
-      color: #ffffff; /* plain white */
-      text-shadow: none; /* no glow */
-      writing-mode: vertical-rl; /* vertical text */
-      transform: rotate(180deg); /* point text upwards */
+      font-family: 'Arial Black', 'Impact', sans-serif;
+      font-size: 4rem;
+      color: #ffffff;
+      text-shadow: none;
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
       text-align: center;
-      margin: 0 120px; /* farther from video */
+      margin: 0 120px;
     }
 
-    .song-title {
-  font-family: 'Dancing Script', cursive; /* subtle cursive */
-  font-size: 1.2rem;                     /* small, readable */
-  color: #ffffff;                         /* plain white */
-  text-align: center;                     /* centered under video */
-  margin-top: 10px;                       /* small gap below video */
-  letter-spacing: 0.5px;                  /* slight spacing for elegance */
-}
-
+    /* Video wrapper to stack video + song title */
+    .video-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
     /* Video */
     video {
@@ -79,6 +76,16 @@
       object-fit: cover;
     }
 
+    /* Song title under video */
+    .song-title {
+      font-family: 'Dancing Script', cursive;
+      font-size: 1.2rem;
+      color: #ffffff;
+      text-align: center;
+      margin-top: 10px;
+      letter-spacing: 0.5px;
+    }
+
     /* Footer */
     footer {
       position: absolute;
@@ -87,6 +94,7 @@
       font-size: 0.9rem;
       opacity: 0.7;
     }
+
   </style>
 </head>
 
@@ -96,17 +104,15 @@
   <div class="container">
     <div class="side-text left">Portfolio</div>
 
-    <video controls preload="metadata">
-      <source src="Video.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-
-    <div class="song-title">Tiri - Jaila Busy Time</div>
-
-    
-    <div class="side-text right">
-      Produce/Mix/Master
+    <div class="video-wrapper">
+      <video controls preload="metadata" poster="cover.jpg">
+        <source src="Video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <div class="song-title">Tiri - Jaila Busy Time</div>
     </div>
+
+    <div class="side-text right">Produce/Mix/Master</div>
   </div>
 
   <footer>seekthelooper@gmail.com</footer>
