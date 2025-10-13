@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seek the Looper | Portfolio</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background-color: #0d0d0d;
+      color: #fff;
+      font-family: "Inter", sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .cover {
+      width: 300px;
+      height: 300px;
+      background-image: url("cover.jpg");
+      background-size: cover;
+      background-position: center;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(255,255,255,0.2);
+    }
+
+    audio {
+      width: 300px;
+      margin-top: 20px;
+      outline: none;
+    }
+
+    footer {
+      position: absolute;
+      bottom: 10px;
+      right: 15px;
+      font-size: 0.9rem;
+      opacity: 0.7;
+    }
+  </style>
+</head>
+<body>
+  <div class="cover"></div>
+  <audio controls>
+    <source src="your-song.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+  <footer>
+    seekthelooper@gmail.com
+  </footer>
+</body>
+</html>
