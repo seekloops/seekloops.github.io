@@ -13,7 +13,7 @@
     body {
       margin: 0;
       min-height: 100vh;
-      background: url('wallpaper.gif') no-repeat center center fixed;
+      background: url('download.gif') no-repeat center center fixed;
       background-size: cover;
       position: relative;
       font-family: "Inter", sans-serif;
@@ -24,7 +24,7 @@
       color: #fff;
     }
 
-    /* Overlay to dim GIF so text pops */
+    /* Overlay to dim GIF */
     body::before {
       content: "";
       position: fixed;
@@ -32,12 +32,12 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0,0,0,0.5); /* adjust 0.5 for fade intensity */
+      background-color: rgba(0,0,0,0.5);
       z-index: 0;
     }
 
-    /* Make all main content appear above overlay */
-    .container, .title, footer {
+    /* All main content above overlay */
+    .title, .main-content, footer {
       position: relative;
       z-index: 1;
     }
@@ -53,18 +53,19 @@
         0 0 10px #00ffff,
         0 0 20px #00ffff,
         0 0 40px #00ffff;
-      position: relative;
-      top: -50px; /* move title up */ 
-      left: -35px; /* adjust left/right */
+      top: -50px;
+      left: -35px;
       margin-bottom: 0;
     }
 
-    /* Container for video + side texts */
-    .container {
+    /* Parent container for everything you want to move together */
+    .main-content {
       display: flex;
       align-items: center;
       justify-content: center;
       position: relative;
+      /* You can adjust horizontal position here: */
+      transform: translateX(100px); /* change 0px to move left/right */
     }
 
     /* Vertical side texts */
@@ -76,17 +77,17 @@
       writing-mode: vertical-rl;
       transform: rotate(180deg);
       text-align: center;
-      margin: 0 200px;
+      margin: 0 120px;
     }
 
     .side-text.left {
-      font-size: 6rem;       /* bigger for Portfolio */
-      font-weight: 900;      /* extra bold */
-      letter-spacing: 2px;   /* spaced letters */
-      margin: 0 100px 0 0;   /* distance from video */
+      font-size: 6rem;
+      font-weight: 900;
+      letter-spacing: 2px;
+      margin: 0 100px 0 0;
     }
 
-    /* Video wrapper to stack video + song title */
+    /* Video wrapper for stacking video + song title */
     .video-wrapper {
       display: flex;
       flex-direction: column;
@@ -120,7 +121,6 @@
       right: 15px;
       font-size: 0.9rem;
       opacity: 0.7;
-      z-index: 1;
     }
   </style>
 </head>
@@ -128,7 +128,8 @@
 <body>
   <h1 class="title">Seek the Looper</h1>
 
-  <div class="container">
+  <!-- Main content that moves together -->
+  <div class="main-content">
     <div class="side-text left">Portfolio</div>
 
     <div class="video-wrapper">
