@@ -17,20 +17,13 @@
       align-items: center;
     }
 
-    .cover {
+    video {
       width: 300px;
       height: 300px;
-      background-image: url("cover.jpg");
-      background-size: cover;
-      background-position: center;
       border-radius: 10px;
       box-shadow: 0 0 20px rgba(255,255,255,0.2);
-    }
-
-    audio {
-      width: 300px;
-      margin-top: 20px;
-      outline: none;
+      background-color: black;
+      object-fit: cover;
     }
 
     footer {
@@ -43,11 +36,11 @@
   </style>
 </head>
 <body>
-  <div class="cover"></div>
-  <audio controls>
-    <source src="your-song.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-  </audio>
+  <video controls preload="metadata">
+    <source src="your-video.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
   <footer>
     seekthelooper@gmail.com
   </footer>
