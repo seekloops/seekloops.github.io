@@ -9,20 +9,38 @@
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Dancing+Script&display=swap" rel="stylesheet">
 
   <style>
-    /* Body */
- body {
-  margin: 0;
-  min-height: 100vh;
-  background: url('download.gif') no-repeat center center fixed;
-  background-size: cover;
-  color: #fff;
-  font-family: "Inter", sans-serif;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-}
+    /* Body with faded GIF background */
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: url('wallpaper.gif') no-repeat center center fixed;
+      background-size: cover;
+      position: relative;
+      font-family: "Inter", sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+    }
+
+    /* Overlay to dim GIF so text pops */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.5); /* adjust 0.5 for fade intensity */
+      z-index: 0;
+    }
+
+    /* Make all main content appear above overlay */
+    .container, .title, footer {
+      position: relative;
+      z-index: 1;
+    }
 
     /* Title */
     .title {
@@ -35,9 +53,9 @@
         0 0 10px #00ffff,
         0 0 20px #00ffff,
         0 0 40px #00ffff;
-      position: relative; 
+      position: relative;
       top: -50px; /* move title up */ 
-      left: -35px; /* move title to the right (negative for left) */
+      left: -35px; /* adjust left/right */
       margin-bottom: 0;
     }
 
@@ -62,12 +80,11 @@
     }
 
     .side-text.left {
-  font-size: 6rem;
-  font-weight: 900;           /* extra bold */
-  letter-spacing: 2px;        /* slightly spaced letters */
-  margin: 0 100px 0 0;
-}
-
+      font-size: 6rem;       /* bigger for Portfolio */
+      font-weight: 900;      /* extra bold */
+      letter-spacing: 2px;   /* spaced letters */
+      margin: 0 100px 0 0;   /* distance from video */
+    }
 
     /* Video wrapper to stack video + song title */
     .video-wrapper {
@@ -103,8 +120,8 @@
       right: 15px;
       font-size: 0.9rem;
       opacity: 0.7;
+      z-index: 1;
     }
-
   </style>
 </head>
 
