@@ -14,168 +14,168 @@ rel="stylesheet"
 <style>
 /* Body with faded GIF background */
 body {
-margin: 0;
-min-height: 100vh;
-background: url('wallpaper.gif') no-repeat center center fixed;
-background-size: cover;
-position: relative;
-font-family: "Inter", sans-serif;
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-color: #fff;
-overflow: hidden;
+  margin: 0;
+  min-height: 100vh;
+  background: url('wallpaper.gif') no-repeat center center fixed;
+  background-size: cover;
+  position: relative;
+  font-family: "Inter", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  color: #fff;
 }
 
 /* Overlay to dim GIF */
 body::before {
-content: "";
-position: fixed;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-      background-color: rgba(0, 0, 0, 0.55);
-      background-color: rgba(0, 0, 0, 0.7);
-z-index: 0;
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.55);
+  z-index: 0;
 }
 
-/* All content stays above overlay */
+/* All content above overlay */
 .beats-button,
 .title,
 .main-content,
 footer {
-position: relative;
-z-index: 1;
+  position: relative;
+  z-index: 1;
 }
 
 /* Beats button */
 .beats-button {
-background: transparent;
-border: 2px solid #00ffff;
-color: #00ffff;
-font-family: "Orbitron", sans-serif;
-font-size: 1.2rem;
-letter-spacing: 2px;
-padding: 10px 30px;
-border-radius: 10px;
-text-transform: uppercase;
-cursor: pointer;
-transition: all 0.3s ease;
-margin-bottom: 25px;
+  background: transparent;
+  border: 2px solid #00ffff;
+  color: #00ffff;
+  font-family: "Orbitron", sans-serif;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  padding: 10px 30px;
+  border-radius: 10px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 25px;
 }
 
 .beats-button:hover {
-background: #00ffff;
-color: #0d0d0d;
-box-shadow: 0 0 20px #00ffff;
+  background: #00ffff;
+  color: #0d0d0d;
+  box-shadow: 0 0 20px #00ffff;
 }
 
 /* Title */
 .title {
-font-family: "Orbitron", sans-serif;
-font-size: 5rem;
-color: #00ffff;
-text-align: center;
-text-shadow:
-0 0 5px #00ffff,
-0 0 10px #00ffff,
-0 0 20px #00ffff,
-0 0 40px #00ffff;
-top: -30px;
-left: 2px;
-margin-bottom: 0;
+  font-family: "Orbitron", sans-serif;
+  font-size: 5rem;
+  color: #00ffff;
+  text-align: center;
+  text-shadow:
+    0 0 5px #00ffff,
+    0 0 10px #00ffff,
+    0 0 20px #00ffff,
+    0 0 40px #00ffff;
+  top: -30px;
+  left: 2px;
+  margin-bottom: 0;
 }
 
 /* Main container for everything that moves together */
 .main-content {
-display: flex;
-align-items: center;
-justify-content: center;
-position: relative;
-transform: translateX(-33px); /* Adjust this value to move left/right */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transform: translateX(-33px); /* Adjust this value to move left/right */
 }
 
 /* Vertical side texts */
 .side-text {
-font-family: "Arial", "Helvetica", sans-serif; /* changed from Arial Black to thin */
-font-size: 4rem;
-font-weight: 400; /* make it skinny */
-color: #ffffff;
-text-shadow: none;
-writing-mode: vertical-rl;
-transform: rotate(180deg) scaleY(1.2) translateY(20px);
-text-align: center;
-margin: 0 210px;
+  font-family: "Arial", "Helvetica", sans-serif;
+  font-size: 4rem;
+  font-weight: 400;
+  color: rgba(255,255,255,0); /* transparent */
+  text-shadow: none;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg) scaleY(1.2) translateY(20px);
+  text-align: center;
+  margin: 0 210px;
 }
 
 .side-text.left {
-font-size: 6rem;
-font-weight: 900;
-letter-spacing: 2px;
-margin: 0 400px 0 0;
+  font-size: 6rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  margin: 0 400px 0 0;
 }
 
 /* Underline style */
 .underline {
-text-decoration: underline;
-text-decoration-thickness: 3px;
-text-underline-offset: 6px;
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 6px;
+  color: rgba(255,255,255,0); /* transparent */
 }
 
-/* Video wrapper for stacking video + text */
+/* Video wrapper */
 .video-wrapper {
-display: flex;
-flex-direction: column;
-align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* Video */
 video {
-width: 80vmin;
-height: 80vmin;
-max-width: 600px;
-max-height: 600px;
-border-radius: 10px;
-box-shadow: 0 0 30px rgba(0, 255, 255, 0.3);
-background-color: black;
-object-fit: cover;
+  width: 80vmin;
+  height: 80vmin;
+  max-width: 600px;
+  max-height: 600px;
+  border-radius: 10px;
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.3);
+  background-color: black;
+  object-fit: cover;
 }
 
 /* Song title under video */
 .song-title {
-font-family: "Inter", sans-serif;
-font-size: 1.1rem;
-color: #ffffff;
-text-align: center;
-margin-top: 10px;
-letter-spacing: 0.5px;
+  font-family: "Inter", sans-serif;
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0); /* transparent */
+  text-align: center;
+  margin-top: 10px;
+  letter-spacing: 0.5px;
 }
 
 /* YouTube link */
 .youtube-link {
-color: #ff4d4d;
-font-family: "Inter", sans-serif;
-font-size: 1rem;
-font-weight: 600;
-text-decoration: none;
-letter-spacing: 0.5px;
-transition: opacity 0.2s ease, text-decoration 0.2s ease;
+  color: rgba(255,255,255,0); /* transparent */
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  transition: opacity 0.2s ease, text-decoration 0.2s ease;
 }
 
 .youtube-link:hover {
-opacity: 0.8;
-text-decoration: underline;
+  opacity: 0.8;
+  text-decoration: underline;
 }
 
 /* Footer */
 footer {
-position: absolute;
-bottom: 10px;
-right: 15px;
-font-size: 0.9rem;
-opacity: 0.7;
+  position: absolute;
+  bottom: 10px;
+  right: 15px;
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0); /* transparent */
 }
 </style>
 </head>
@@ -188,29 +188,29 @@ opacity: 0.7;
 
 <!-- Main content that moves together -->
 <div class="main-content">
-<div class="side-text left">Portfolio</div>
+  <div class="side-text left">Portfolio</div>
 
-<div class="video-wrapper">
-<video controls controlsList="nofullscreen" preload="metadata" poster="cover.jpg">
-<source src="Video.mp4" type="video/mp4" />
-Your browser does not support the video tag.
-</video>
+  <div class="video-wrapper">
+    <video controls controlsList="nofullscreen" preload="metadata" poster="cover.jpg">
+      <source src="Video.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
 
-<div class="song-title">
-Tiri - Jaila Busy Time (Mixed & Mastered by Me)
-<br />
-<a
-href="https://www.youtube.com/watch?v=LRCyn03um3o"
-target="_blank"
-class="youtube-link"
->Stream on YouTube</a
->
-</div>
-</div>
+    <div class="song-title">
+      Tiri - Jaila Busy Time (Mixed & Mastered by Me)
+      <br />
+      <a
+        href="https://www.youtube.com/watch?v=LRCyn03um3o"
+        target="_blank"
+        class="youtube-link"
+        >Stream on YouTube</a
+      >
+    </div>
+  </div>
 
-<div class="side-text right">
-Produce/<span class="underline">Mix/Master</span>
-</div>
+  <div class="side-text right">
+    Produce/<span class="underline">Mix/Master</span>
+  </div>
 </div>
 
 <footer>seekthelooper@gmail.com</footer>
