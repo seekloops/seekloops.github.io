@@ -24,7 +24,8 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto; /* allows vertical scrolling */
   color: #fff;
 }
 
@@ -87,13 +88,14 @@ footer {
   margin-bottom: 0;
 }
 
-/* Main container for everything that moves together */
+/* Main container for each song */
 .main-content {
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
   transform: translateX(-33px);
+  margin-bottom: 80px; /* space between songs */
 }
 
 /* Vertical side texts */
@@ -101,7 +103,7 @@ footer {
   font-family: "Arial", "Helvetica", sans-serif;
   font-size: 4rem;
   font-weight: 400;
-  color: rgba(255,255,255,0.4); /* slightly transparent */
+  color: rgba(255,255,255,0.4);
   text-shadow: none;
   writing-mode: vertical-rl;
   transform: rotate(180deg) scaleY(1.2) translateY(20px);
@@ -121,7 +123,7 @@ footer {
   text-decoration: underline;
   text-decoration-thickness: 3px;
   text-underline-offset: 6px;
-  color: rgba(255,255,255,0.4); /* slightly transparent */
+  color: rgba(255,255,255,0.4);
 }
 
 /* Video wrapper */
@@ -141,13 +143,14 @@ video {
   box-shadow: 0 0 30px rgba(0, 255, 255, 0.3);
   background-color: black;
   object-fit: cover;
+  margin-bottom: 10px;
 }
 
 /* Song title under video */
 .song-title {
   font-family: "Inter", sans-serif;
   font-size: 1.1rem;
-  color: rgba(255,255,255,0.7); /* slightly transparent */
+  color: rgba(255,255,255,0.7);
   text-align: center;
   margin-top: 10px;
   letter-spacing: 0.5px;
@@ -155,7 +158,7 @@ video {
 
 /* YouTube link */
 .youtube-link {
-  color: rgba(255,77,77,0.7); /* slightly transparent red */
+  color: rgba(255,77,77,0.7);
   font-family: "Inter", sans-serif;
   font-size: 1rem;
   font-weight: 600;
@@ -175,7 +178,7 @@ footer {
   bottom: 10px;
   right: 15px;
   font-size: 0.9rem;
-  color: rgba(255,255,255,0.4); /* slightly transparent */
+  color: rgba(255,255,255,0.4);
 }
 </style>
 </head>
@@ -187,7 +190,7 @@ footer {
 <!-- Title -->
 <h1 class="title">Seek the Looper</h1>
 
-<!-- Main content that moves together -->
+<!-- First song -->
 <div class="main-content">
   <div class="side-text left">Portfolio</div>
 
@@ -211,6 +214,26 @@ footer {
 
   <div class="side-text right">
     Produce/<span class="underline">Mix/Master</span>
+  </div>
+</div>
+
+<!-- Second song -->
+<div class="main-content">
+  <div class="side-text left">Portfolio</div>
+
+  <div class="video-wrapper">
+    <video controls controlsList="nofullscreen" preload="metadata" poster="cover2.jpg">
+      <source src="Emotions.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+
+    <div class="song-title">
+      Emotions (Produced, Mixed & Mastered by Me)
+    </div>
+  </div>
+
+  <div class="side-text right">
+    <span class="underline">Produce</span>/<span class="underline">Mix</span>/<span class="underline">Master</span>
   </div>
 </div>
 
