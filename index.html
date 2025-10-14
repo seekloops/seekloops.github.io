@@ -6,9 +6,13 @@
 <title>Seek the Looper | Portfolio</title>
 
 <!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet"/>
+<link
+href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Inter:wght@400;600&display=swap"
+rel="stylesheet"
+/>
 
 <style>
+/* Body with faded GIF background */
 body {
   margin: 0;
   min-height: 100vh;
@@ -16,7 +20,7 @@ body {
   background-size: cover;
   font-family: "Inter", sans-serif;
   overflow-x: hidden;
-  overflow-y: auto;
+  overflow-y: auto; /* vertical scroll */
   color: #fff;
   position: relative;
 }
@@ -25,22 +29,22 @@ body {
 body::before {
   content: "";
   position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background-color: rgba(0, 0, 0, 0.7);
   z-index: 0;
 }
 
-/* All content above overlay */
-.beats-button,
-.title,
-.main-content,
-footer {
+/* Centered elements: beats button + title */
+.header {
+  text-align: center;
   position: relative;
   z-index: 1;
+  margin-bottom: 50px;
 }
 
-/* Beats button */
 .beats-button {
   background: transparent;
   border: 2px solid #00ffff;
@@ -53,7 +57,7 @@ footer {
   text-transform: uppercase;
   cursor: pointer;
   transition: all 0.3s ease;
-  margin-bottom: 25px;
+  margin-bottom: 15px;
 }
 
 .beats-button:hover {
@@ -62,26 +66,32 @@ footer {
   box-shadow: 0 0 20px #00ffff;
 }
 
-/* Title */
 .title {
   font-family: "Orbitron", sans-serif;
   font-size: 5rem;
   color: #00ffff;
-  text-align: center;
-  text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 40px #00ffff;
-  margin-bottom: 50px;
+  text-shadow:
+    0 0 5px #00ffff,
+    0 0 10px #00ffff,
+    0 0 20px #00ffff,
+    0 0 40px #00ffff;
+  margin: 0;
 }
 
-/* Main container for each song */
+/* Main container for each song: grid */
 .main-content {
-  display: flex;
+  display: grid;
+  grid-template-columns: 200px 1fr 200px; /* left | center | right */
   align-items: center;
-  justify-content: center;
-  position: relative;
+  justify-items: center;
+  gap: 50px;
+  width: 100%;
   margin-bottom: 80px;
+  position: relative;
+  z-index: 1;
 }
 
-/* Left side text (flush to left edge) */
+/* Left text */
 .side-text.left {
   font-family: "Arial", "Helvetica", sans-serif;
   font-size: 6rem;
@@ -90,12 +100,9 @@ footer {
   writing-mode: vertical-rl;
   transform: rotate(180deg) scaleY(1.2);
   text-align: center;
-  margin-right: 50px; /* spacing to video, can be small if needed */
-  position: absolute;
-  left: 0; /* flush left */
 }
 
-/* Right side text (offset from video) */
+/* Right text */
 .side-text.right {
   font-family: "Arial", "Helvetica", sans-serif;
   font-size: 4rem;
@@ -104,11 +111,9 @@ footer {
   writing-mode: vertical-rl;
   transform: rotate(180deg) scaleY(1.2);
   text-align: center;
-  margin-left: 50px; /* space from video */
 }
 
-/* Underline style */
-.underline {
+.side-text.right .underline {
   text-decoration: underline;
   text-decoration-thickness: 3px;
   text-underline-offset: 6px;
@@ -135,7 +140,7 @@ video {
   margin-bottom: 10px;
 }
 
-/* Song title under video */
+/* Song title */
 .song-title {
   font-family: "Inter", sans-serif;
   font-size: 1.1rem;
@@ -145,7 +150,6 @@ video {
   letter-spacing: 0.5px;
 }
 
-/* YouTube link */
 .youtube-link {
   color: rgba(255,77,77,0.7);
   font-family: "Inter", sans-serif;
@@ -171,10 +175,12 @@ footer {
 }
 </style>
 </head>
-
 <body>
-<button class="beats-button" onclick="window.open('https://www.youtube.com/@SeekTheLooper/videos', '_blank')">🔗 Beats</button>
-<h1 class="title">Seek the Looper</h1>
+
+<div class="header">
+  <button class="beats-button" onclick="window.open('https://www.youtube.com/@SeekTheLooper/videos', '_blank')">🔗 Beats</button>
+  <h1 class="title">Seek the Looper</h1>
+</div>
 
 <!-- First song -->
 <div class="main-content">
@@ -185,6 +191,7 @@ footer {
       <source src="Video.mp4" type="video/mp4" />
       Your browser does not support the video tag.
     </video>
+
     <div class="song-title">
       Tiri - Jaila Busy Tme (Mixed & Mastered by Me)
       <br />
@@ -206,6 +213,7 @@ footer {
       <source src="Emotions.mp4" type="video/mp4" />
       Your browser does not support the video tag.
     </video>
+
     <div class="song-title">
       Emotions – Seek the Looper (Writer, Performer, Producer, Mixer, Master)
       <br />
