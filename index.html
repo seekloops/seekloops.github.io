@@ -81,7 +81,7 @@ footer {
   margin-bottom: 80px;
 }
 
-/* Left side text */
+/* Left side text (flush to left edge) */
 .side-text.left {
   font-family: "Arial", "Helvetica", sans-serif;
   font-size: 6rem;
@@ -90,10 +90,12 @@ footer {
   writing-mode: vertical-rl;
   transform: rotate(180deg) scaleY(1.2);
   text-align: center;
-  margin-right: 50px; /* spacing between left text and video */
+  margin-right: 50px; /* spacing to video, can be small if needed */
+  position: absolute;
+  left: 0; /* flush left */
 }
 
-/* Right side text */
+/* Right side text (offset from video) */
 .side-text.right {
   font-family: "Arial", "Helvetica", sans-serif;
   font-size: 4rem;
@@ -102,7 +104,7 @@ footer {
   writing-mode: vertical-rl;
   transform: rotate(180deg) scaleY(1.2);
   text-align: center;
-  margin-left: 50px; /* spacing between video and right text */
+  margin-left: 50px; /* space from video */
 }
 
 /* Underline style */
