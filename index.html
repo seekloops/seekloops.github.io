@@ -9,6 +9,16 @@
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet" />
 
 <style>
+  /* Fix alignment and spacing for videos and right-side text */
+.main-content {
+  display: grid;
+  grid-template-columns: auto minmax(300px, 600px) auto; /* left | center/video | right */
+  align-items: center; /* vertical alignment */
+  justify-items: center; /* horizontal alignment inside each column */
+  gap: 50px; /* spacing between columns */
+  width: 100%;
+  margin-bottom: 80px; /* space between songs */
+}
 /* Body with faded GIF background */
 body {
   margin: 0;
