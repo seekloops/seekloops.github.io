@@ -118,6 +118,9 @@ header {
   text-align: center;
   justify-self: start;
   margin-top: -82px; /* negative moves it up, positive moves it down */
+  position: relative; /* keeps pseudo-element positioned correctly */
+  z-index: 1; /* make sure text stays on top */
+  
 }
 
   .side-text.left::before {
