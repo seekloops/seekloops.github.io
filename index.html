@@ -6,10 +6,7 @@
 <title>Seek the Looper | Portfolio</title>
 
 <!-- Google Fonts -->
-<link
-href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Inter:wght@400;600&display=swap"
-rel="stylesheet"
-/>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet" />
 
 <style>
 /* Body with faded GIF background */
@@ -20,7 +17,7 @@ body {
   background-size: cover;
   font-family: "Inter", sans-serif;
   overflow-x: hidden;
-  overflow-y: auto; /* vertical scroll */
+  overflow-y: auto;
   color: #fff;
   position: relative;
 }
@@ -33,17 +30,18 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0,0,0,0.7);
   z-index: 0;
 }
 
-/* All content above overlay */
-.beats-button,
-.title,
-.song-wrapper,
-footer {
-  position: relative;
+/* Centered header */
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   z-index: 1;
+  position: relative;
+  margin-bottom: 50px;
 }
 
 /* Beats button */
@@ -59,7 +57,7 @@ footer {
   text-transform: uppercase;
   cursor: pointer;
   transition: all 0.3s ease;
-  margin-bottom: 25px;
+  margin-bottom: 15px;
 }
 
 .beats-button:hover {
@@ -79,17 +77,21 @@ footer {
     0 0 10px #00ffff,
     0 0 20px #00ffff,
     0 0 40px #00ffff;
-  margin-bottom: 50px;
+  margin: 0;
 }
 
-/* Wrapper for each song: flex container */
-.song-wrapper {
-  display: flex;
-  align-items: center; /* vertical alignment */
-  justify-content: center; /* center the video horizontally */
-  position: relative;
-  margin-bottom: 80px; /* space between songs */
+/* Song container grid */
+.song-container {
+  display: grid;
+  grid-template-columns: min-content auto min-content;
+  align-items: center;
+  justify-items: start;
+  gap: 50px;
   width: 100%;
+  max-width: 1400px;
+  margin: 0 auto 80px auto;
+  z-index: 1;
+  position: relative;
 }
 
 /* Left-side Portfolio */
@@ -101,44 +103,20 @@ footer {
   writing-mode: vertical-rl;
   transform: rotate(180deg) scaleY(1.2);
   text-align: center;
-  margin-right: 50px; /* distance from video */
-  flex-shrink: 0; /* prevent shrinking */
-  position: absolute;
-  left: 0; /* hug left edge */
+  justify-self: start; /* hugs left side */
 }
 
-/* Right-side Produce/Mix/Master */
-.side-text.right {
-  font-family: "Arial", "Helvetica", sans-serif;
-  font-size: 4rem;
-  font-weight: 400;
-  color: rgba(255,255,255,0.4);
-  writing-mode: vertical-rl;
-  transform: rotate(180deg) scaleY(1.2);
-  text-align: center;
-  flex-shrink: 0; /* prevent shrinking */
-  margin-left: 50px; /* distance from video */
-}
-
-/* Underline style */
-.underline {
-  text-decoration: underline;
-  text-decoration-thickness: 3px;
-  text-underline-offset: 6px;
-  color: rgba(255,255,255,0.4);
-}
-
-/* Video wrapper */
+/* Center video wrapper */
 .video-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-self: center;
 }
 
 /* Video */
 video {
   width: 80vmin;
-  height: 80vmin;
   max-width: 600px;
   max-height: 600px;
   border-radius: 10px;
@@ -148,7 +126,7 @@ video {
   margin-bottom: 10px;
 }
 
-/* Song title under video */
+/* Song title */
 .song-title {
   font-family: "Inter", sans-serif;
   font-size: 1.1rem;
@@ -174,9 +152,29 @@ video {
   text-decoration: underline;
 }
 
+/* Right-side Produce/Mix/Master */
+.side-text.right {
+  font-family: "Arial", "Helvetica", sans-serif;
+  font-size: 4rem;
+  font-weight: 400;
+  color: rgba(255,255,255,0.4);
+  writing-mode: vertical-rl;
+  transform: rotate(180deg) scaleY(1.2);
+  text-align: center;
+  justify-self: start; /* we'll manually offset with margin */
+  margin-left: 50px; /* distance from video */
+}
+
+.side-text.right .underline {
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 6px;
+  color: rgba(255,255,255,0.4);
+}
+
 /* Footer (email) */
 footer {
-  position: fixed; /* stays in corner while scrolling */
+  position: fixed;
   bottom: 10px;
   right: 15px;
   font-size: 0.9rem;
@@ -184,16 +182,15 @@ footer {
 }
 </style>
 </head>
-
 <body>
-<!-- Beats Button -->
-<button class="beats-button" onclick="window.open('https://www.youtube.com/@SeekTheLooper/videos', '_blank')">🔗 Beats</button>
 
-<!-- Title -->
-<h1 class="title">Seek the Looper</h1>
+<header>
+  <button class="beats-button" onclick="window.open('https://www.youtube.com/@SeekTheLooper/videos','_blank')">🔗 Beats</button>
+  <h1 class="title">Seek the Looper</h1>
+</header>
 
 <!-- First song -->
-<div class="song-wrapper">
+<div class="song-container">
   <div class="side-text left">Portfolio</div>
 
   <div class="video-wrapper">
@@ -201,16 +198,10 @@ footer {
       <source src="Video.mp4" type="video/mp4" />
       Your browser does not support the video tag.
     </video>
-
     <div class="song-title">
       Tiri - Jaila Busy Tme (Mixed & Mastered by Me)
       <br />
-      <a
-        href="https://www.youtube.com/watch?v=LRCyn03um3o"
-        target="_blank"
-        class="youtube-link"
-        >Stream on YouTube</a
-      >
+      <a href="https://www.youtube.com/watch?v=LRCyn03um3o" target="_blank" class="youtube-link">Stream on YouTube</a>
     </div>
   </div>
 
@@ -220,7 +211,7 @@ footer {
 </div>
 
 <!-- Second song -->
-<div class="song-wrapper">
+<div class="song-container">
   <div class="side-text left">Portfolio</div>
 
   <div class="video-wrapper">
@@ -228,16 +219,10 @@ footer {
       <source src="Emotions.mp4" type="video/mp4" />
       Your browser does not support the video tag.
     </video>
-
     <div class="song-title">
       Emotions – Seek the Looper (Writer, Performer, Producer, Mixer, Master)
       <br />
-      <a
-        href="https://www.youtube.com/watch?v=jCxLDvkrPbI"
-        target="_blank"
-        class="youtube-link"
-        >Stream on YouTube</a
-      >
+      <a href="https://www.youtube.com/watch?v=jCxLDvkrPbI" target="_blank" class="youtube-link">Stream on YouTube</a>
     </div>
   </div>
 
@@ -247,5 +232,6 @@ footer {
 </div>
 
 <footer>seekthelooper@gmail.com</footer>
+
 </body>
 </html>
