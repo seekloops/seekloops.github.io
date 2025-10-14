@@ -40,6 +40,19 @@ body::before {
   pointer-events: none;
 }
 
+  /* vertical CD-style strip behind "Portfolio" */
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 120px;              /* adjust width for how thick you want it */
+  height: 100%;
+  background: rgba(0, 0, 0, 0.75); /* darker or lighter */
+  z-index: 0;                /* sits behind everything */
+  pointer-events: none;
+}
+
 /* === HEADER === */
 header {
   display: flex;
