@@ -37,14 +37,16 @@ body::before {
   z-index: 0;
 }
 
-/* Centered elements: beats button + title */
-.header {
-  text-align: center;
+/* All content above overlay */
+.beats-button,
+.title,
+.song-wrapper,
+footer {
   position: relative;
   z-index: 1;
-  margin-bottom: 50px;
 }
 
+/* Beats button */
 .beats-button {
   background: transparent;
   border: 2px solid #00ffff;
@@ -57,7 +59,7 @@ body::before {
   text-transform: uppercase;
   cursor: pointer;
   transition: all 0.3s ease;
-  margin-bottom: 15px;
+  margin-bottom: 25px;
 }
 
 .beats-button:hover {
@@ -66,32 +68,31 @@ body::before {
   box-shadow: 0 0 20px #00ffff;
 }
 
+/* Title */
 .title {
   font-family: "Orbitron", sans-serif;
   font-size: 5rem;
   color: #00ffff;
+  text-align: center;
   text-shadow:
     0 0 5px #00ffff,
     0 0 10px #00ffff,
     0 0 20px #00ffff,
     0 0 40px #00ffff;
-  margin: 0;
+  margin-bottom: 50px;
 }
 
-/* Main container for each song: grid */
-.main-content {
-  display: grid;
-  grid-template-columns: 200px 1fr 200px; /* left | center | right */
-  align-items: center;
-  justify-items: center;
-  gap: 50px;
-  width: 100%;
-  margin-bottom: 80px;
+/* Wrapper for each song: flex container */
+.song-wrapper {
+  display: flex;
+  align-items: center; /* vertical alignment */
+  justify-content: center; /* center the video horizontally */
   position: relative;
-  z-index: 1;
+  margin-bottom: 80px; /* space between songs */
+  width: 100%;
 }
 
-/* Left text */
+/* Left-side Portfolio */
 .side-text.left {
   font-family: "Arial", "Helvetica", sans-serif;
   font-size: 6rem;
@@ -100,9 +101,13 @@ body::before {
   writing-mode: vertical-rl;
   transform: rotate(180deg) scaleY(1.2);
   text-align: center;
+  margin-right: 50px; /* distance from video */
+  flex-shrink: 0; /* prevent shrinking */
+  position: absolute;
+  left: 0; /* hug left edge */
 }
 
-/* Right text */
+/* Right-side Produce/Mix/Master */
 .side-text.right {
   font-family: "Arial", "Helvetica", sans-serif;
   font-size: 4rem;
@@ -111,9 +116,12 @@ body::before {
   writing-mode: vertical-rl;
   transform: rotate(180deg) scaleY(1.2);
   text-align: center;
+  flex-shrink: 0; /* prevent shrinking */
+  margin-left: 50px; /* distance from video */
 }
 
-.side-text.right .underline {
+/* Underline style */
+.underline {
   text-decoration: underline;
   text-decoration-thickness: 3px;
   text-underline-offset: 6px;
@@ -140,7 +148,7 @@ video {
   margin-bottom: 10px;
 }
 
-/* Song title */
+/* Song title under video */
 .song-title {
   font-family: "Inter", sans-serif;
   font-size: 1.1rem;
@@ -150,6 +158,7 @@ video {
   letter-spacing: 0.5px;
 }
 
+/* YouTube link */
 .youtube-link {
   color: rgba(255,77,77,0.7);
   font-family: "Inter", sans-serif;
@@ -167,7 +176,7 @@ video {
 
 /* Footer (email) */
 footer {
-  position: fixed;
+  position: fixed; /* stays in corner while scrolling */
   bottom: 10px;
   right: 15px;
   font-size: 0.9rem;
@@ -175,15 +184,16 @@ footer {
 }
 </style>
 </head>
-<body>
 
-<div class="header">
-  <button class="beats-button" onclick="window.open('https://www.youtube.com/@SeekTheLooper/videos', '_blank')">🔗 Beats</button>
-  <h1 class="title">Seek the Looper</h1>
-</div>
+<body>
+<!-- Beats Button -->
+<button class="beats-button" onclick="window.open('https://www.youtube.com/@SeekTheLooper/videos', '_blank')">🔗 Beats</button>
+
+<!-- Title -->
+<h1 class="title">Seek the Looper</h1>
 
 <!-- First song -->
-<div class="main-content">
+<div class="song-wrapper">
   <div class="side-text left">Portfolio</div>
 
   <div class="video-wrapper">
@@ -195,7 +205,12 @@ footer {
     <div class="song-title">
       Tiri - Jaila Busy Tme (Mixed & Mastered by Me)
       <br />
-      <a href="https://www.youtube.com/watch?v=LRCyn03um3o" target="_blank" class="youtube-link">Stream on YouTube</a>
+      <a
+        href="https://www.youtube.com/watch?v=LRCyn03um3o"
+        target="_blank"
+        class="youtube-link"
+        >Stream on YouTube</a
+      >
     </div>
   </div>
 
@@ -205,7 +220,7 @@ footer {
 </div>
 
 <!-- Second song -->
-<div class="main-content">
+<div class="song-wrapper">
   <div class="side-text left">Portfolio</div>
 
   <div class="video-wrapper">
@@ -217,7 +232,12 @@ footer {
     <div class="song-title">
       Emotions – Seek the Looper (Writer, Performer, Producer, Mixer, Master)
       <br />
-      <a href="https://www.youtube.com/watch?v=jCxLDvkrPbI" target="_blank" class="youtube-link">Stream on YouTube</a>
+      <a
+        href="https://www.youtube.com/watch?v=jCxLDvkrPbI"
+        target="_blank"
+        class="youtube-link"
+        >Stream on YouTube</a
+      >
     </div>
   </div>
 
