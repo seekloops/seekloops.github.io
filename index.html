@@ -40,14 +40,15 @@
       z-index: 0;
     }
 
-    /* All content stays above overlay */
-    .beats-button,
-    .title,
-    .main-content,
-    footer {
-      position: relative;
-      z-index: 1;
-    }
+   /* Make everything except title and beats transparent */
+.main-content, 
+footer, 
+.song-title, 
+.side-text, 
+.youtube-link {
+  color: transparent !important;
+  text-shadow: none !important; /* remove glow from side texts */
+}
 
     /* Beats button */
     .beats-button {
