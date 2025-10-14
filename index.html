@@ -118,23 +118,22 @@ header {
   text-align: center;
   justify-self: start;
   margin-top: -82px; /* negative moves it up, positive moves it down */
-  position: relative; /* keeps pseudo-element positioned correctly */
-  z-index: 1; /* make sure text stays on top */
   
 }
-
+/*
   .side-text.left::before {
   content: "";
   position: absolute;
   top: 0;
-  left: 0; /* pushes the “CD edge” slightly behind the text */
+  left: 0; 
   width: 110%;
   height: 100%;
   background: linear-gradient(to left, #000 40%, rgba(0, 0, 0, 0.7) 70%, transparent 100%);
-  box-shadow: inset -10px 0 20px rgba(0, 255, 255, 0.15); /* subtle cyan reflection */
-  z-index: -1; /* stays behind text */
+  box-shadow: inset -10px 0 20px rgba(0, 255, 255, 0.15); 
+  z-index: -1; 
   border-radius: 2px;
 }
+*/
 
 .side-text.right {
   font-family: "Arial", "Helvetica", sans-serif;
