@@ -120,6 +120,19 @@ header {
   margin-top: -82px; /* negative moves it up, positive moves it down */
 }
 
+  .side-text.left::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -30px; /* pushes the “CD edge” slightly behind the text */
+  width: 30px;
+  height: 100%;
+  background: linear-gradient(to right, #000 0%, rgba(0, 0, 0, 0.7) 40%, transparent 100%);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.15); /* subtle cyan reflection */
+  z-index: -1; /* stays behind text */
+  border-radius: 4px;
+}
+
 .side-text.right {
   font-family: "Arial", "Helvetica", sans-serif;
   font-size: 3rem;
