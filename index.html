@@ -18,15 +18,11 @@ body {
   min-height: 100vh;
   background: url('wallpaper.gif') no-repeat center center fixed;
   background-size: cover;
-  position: relative;
   font-family: "Inter", sans-serif;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   overflow-x: hidden;
-  overflow-y: auto; /* allows vertical scrolling */
+  overflow-y: auto; /* vertical scroll */
   color: #fff;
+  position: relative;
 }
 
 /* Overlay to dim GIF */
@@ -83,18 +79,17 @@ footer {
     0 0 10px #00ffff,
     0 0 20px #00ffff,
     0 0 40px #00ffff;
-  top: -30px;
-  left: -3px;
-  margin-bottom: 0;
+  margin-bottom: 50px;
 }
 
-/* Main container for each song */
+/* Grid-based main content for perfect alignment */
 .main-content {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  transform: translateX(-33px);
+  display: grid;
+  grid-template-columns: auto 1fr auto; /* left | center | right */
+  align-items: center; /* vertical alignment */
+  justify-items: center; /* horizontal alignment in each column */
+  gap: 50px; /* spacing between columns */
+  width: 100%;
   margin-bottom: 80px; /* space between songs */
 }
 
@@ -104,22 +99,17 @@ footer {
   font-size: 4rem;
   font-weight: 400;
   color: rgba(255,255,255,0.4);
-  text-shadow: none;
   writing-mode: vertical-rl;
-  transform: rotate(180deg) scaleY(1.2) translateY(20px);
+  transform: rotate(180deg) scaleY(1.2);
   text-align: center;
-  margin: 0 210px;
 }
 
 .side-text.left {
   font-size: 6rem;
   font-weight: 900;
-  letter-spacing: 2px;
-  margin: 0 400px 0 0;
 }
 
-/* Underline style */
-.underline {
+.side-text.right .underline {
   text-decoration: underline;
   text-decoration-thickness: 3px;
   text-underline-offset: 6px;
@@ -174,7 +164,7 @@ video {
 
 /* Footer (email) */
 footer {
-  position: absolute;
+  position: fixed; /* stays in corner while scrolling */
   bottom: 10px;
   right: 15px;
   font-size: 0.9rem;
