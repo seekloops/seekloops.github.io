@@ -9,16 +9,17 @@
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet" />
 
 <style>
-  /* Fix alignment and spacing for videos and right-side text */
+/* Fix alignment and spacing for videos and right-side text */
 .main-content {
   display: grid;
   grid-template-columns: auto minmax(300px, 600px) auto; /* left | center/video | right */
-  align-items: center; /* vertical alignment */
-  justify-items: center; /* horizontal alignment inside each column */
-  gap: 50px; /* spacing between columns */
+  align-items: center;
+  justify-items: center;
+  gap: 50px;
   width: 100%;
-  margin-bottom: 80px; /* space between songs */
+  margin-bottom: 80px;
 }
+
 /* Body with faded GIF background */
 body {
   margin: 0;
@@ -90,20 +91,6 @@ header {
   margin: 0;
 }
 
-/* Song container grid */
-.song-container {
-  display: grid;
-  grid-template-columns: min-content auto min-content;
-  align-items: center;
-  justify-items: start;
-  gap: 50px;
-  width: 100%;
-  max-width: 1400px;
-  margin: 0 auto 80px auto;
-  z-index: 1;
-  position: relative;
-}
-
 /* Left-side Portfolio */
 .side-text.left {
   font-family: "Arial", "Helvetica", sans-serif;
@@ -113,15 +100,34 @@ header {
   writing-mode: vertical-rl;
   transform: rotate(180deg) scaleY(1.2);
   text-align: center;
-  justify-self: start; /* hugs left side */
+  justify-self: start;
 }
 
-/* Center video wrapper */
+/* Right-side Produce/Mix/Master */
+.side-text.right {
+  font-family: "Arial", "Helvetica", sans-serif;
+  font-size: 4rem;
+  font-weight: 400;
+  color: rgba(255,255,255,0.4);
+  writing-mode: vertical-rl;
+  transform: rotate(180deg) scaleY(1.2);
+  text-align: center;
+  justify-self: start;
+  margin-left: 50px;
+}
+
+.side-text.right .underline {
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 6px;
+  color: rgba(255,255,255,0.4);
+}
+
+/* Video wrapper */
 .video-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-self: center;
 }
 
 /* Video */
@@ -162,26 +168,6 @@ video {
   text-decoration: underline;
 }
 
-/* Right-side Produce/Mix/Master */
-.side-text.right {
-  font-family: "Arial", "Helvetica", sans-serif;
-  font-size: 4rem;
-  font-weight: 400;
-  color: rgba(255,255,255,0.4);
-  writing-mode: vertical-rl;
-  transform: rotate(180deg) scaleY(1.2);
-  text-align: center;
-  justify-self: start; /* we'll manually offset with margin */
-  margin-left: 50px; /* distance from video */
-}
-
-.side-text.right .underline {
-  text-decoration: underline;
-  text-decoration-thickness: 3px;
-  text-underline-offset: 6px;
-  color: rgba(255,255,255,0.4);
-}
-
 /* Footer (email) */
 footer {
   position: fixed;
@@ -189,6 +175,47 @@ footer {
   right: 15px;
   font-size: 0.9rem;
   color: rgba(255,255,255,0.4);
+}
+
+/* === MOBILE RESPONSIVENESS === */
+@media screen and (max-width: 900px) {
+  .side-text.left {
+    font-size: 4rem;
+  }
+  .side-text.right {
+    font-size: 3rem;
+    margin-left: 30px;
+  }
+  video {
+    width: 60vmin;
+  }
+  .title {
+    font-size: 4rem;
+  }
+  .beats-button {
+    font-size: 1rem;
+    padding: 8px 20px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .side-text.left {
+    font-size: 3rem;
+  }
+  .side-text.right {
+    font-size: 2.5rem;
+    margin-left: 20px;
+  }
+  video {
+    width: 50vmin;
+  }
+  .title {
+    font-size: 3rem;
+  }
+  .beats-button {
+    font-size: 0.9rem;
+    padding: 6px 16px;
+  }
 }
 </style>
 </head>
@@ -200,7 +227,7 @@ footer {
 </header>
 
 <!-- First song -->
-<div class="song-container">
+<div class="main-content">
   <div class="side-text left">Portfolio</div>
 
   <div class="video-wrapper">
@@ -221,7 +248,7 @@ footer {
 </div>
 
 <!-- Second song -->
-<div class="song-container">
+<div class="main-content">
   <div class="side-text left">Portfolio</div>
 
   <div class="video-wrapper">
