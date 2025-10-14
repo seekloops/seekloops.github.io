@@ -90,36 +90,41 @@ header {
   justify-items: center;
   gap: 50px;
   width: 100%;
-  margin-bottom: 160px; /* increased from 80px for taller side texts */
+  margin-bottom: 160px; /* increased for taller side texts */
   z-index: 1;
 }
 
+/* Video-only wrapper */
+.video-only-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 /* Side texts */
-.side-text.left {
-  font-family: "Arial", "Helvetica", sans-serif;
-  font-size: 6rem;
-  font-weight: 900;
-  color: rgba(255,255,255,0.4);
+.side-text.left,
+.side-text.right {
   writing-mode: vertical-rl;
   transform: rotate(180deg) scaleY(1.2);
   text-align: center;
+  font-family: "Arial", "Helvetica", sans-serif;
+}
+
+.side-text.left {
+  font-size: 6rem;
+  font-weight: 900;
+  color: rgba(255,255,255,0.4);
   justify-self: start;
 }
 
 .side-text.right {
-  font-family: "Arial", "Helvetica", sans-serif;
   font-size: 3rem;
   font-weight: 400;
   color: rgba(255,255,255,0.4);
-  writing-mode: vertical-rl;
-  transform: rotate(180deg) scaleY(1.2);
-  text-align: center;
   justify-self: start;
-  margin-left: 50px; /* distance from video */
-  display: flex;            /* make it a flex container */
-  justify-content: center;  /* vertically center content */
-  height: fit-content;      /* shrink to just the video height */
+  margin-left: 50px;
+  display: flex;
+  align-items: center; /* vertically center to video */
 }
 
 .side-text.right .underline {
@@ -210,7 +215,7 @@ footer {
   .title {
     font-size: 3rem;
   }
-     .main-content {
+  .main-content {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -227,6 +232,7 @@ footer {
     margin: 0 auto;
     text-align: center;
   }
+
   .beats-button {
     font-size: 0.9rem;
     padding: 6px 16px;
@@ -246,10 +252,12 @@ footer {
   <div class="side-text left">Portfolio</div>
 
   <div class="video-wrapper">
-    <video controls controlsList="nofullscreen" preload="metadata" poster="cover.jpg">
-      <source src="Video.mp4" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
+    <div class="video-only-wrapper">
+      <video controls controlsList="nofullscreen" preload="metadata" poster="cover.jpg">
+        <source src="Video.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
     <div class="song-title">
       Tiri - Jaila Busy Tme (Mixed & Mastered by Me)
       <br />
@@ -267,36 +275,42 @@ footer {
   <div class="side-text left">Portfolio</div>
 
   <div class="video-wrapper">
-    <video controls controlsList="nofullscreen" preload="metadata" poster="cover2.jpg">
-      <source src="Emotions.mp4" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
+    <div class="video-only-wrapper">
+      <video controls controlsList="nofullscreen" preload="metadata" poster="cover2.jpg">
+        <source src="Emotions.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
     <div class="song-title">
       SeektheLooper - Emotions (Writer, Performer, Producer, Mixer, Master)
       <br />
       <a href="https://www.youtube.com/watch?v=jCxLDvkrPbI" target="_blank" class="youtube-link">Stream on YouTube</a>
     </div>
   </div>
+
   <div class="side-text right">
     <span class="underline">Produce</span>/<span class="underline">Mix</span>/<span class="underline">Master</span>
   </div>
 </div>
 
-  <!-- Third song -->
-  <div class="main-content">
+<!-- Third song -->
+<div class="main-content">
   <div class="side-text left">Portfolio</div>
 
   <div class="video-wrapper">
-    <video controls controlsList="nofullscreen" preload="metadata" poster="cover3.jpg">
-      <source src="lost.mp4" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
+    <div class="video-only-wrapper">
+      <video controls controlsList="nofullscreen" preload="metadata" poster="cover3.jpg">
+        <source src="lost.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
     <div class="song-title">
       SeektheLooper - I'm So Lost (Writer, Performer, Producer, Mixer, Master)
       <br />
       <a href="https://www.youtube.com/watch?v=6KbBDFXOw5I" target="_blank" class="youtube-link">Stream on YouTube</a>
     </div>
   </div>
+
   <div class="side-text right">
     <span class="underline">Produce</span>/<span class="underline">Mix</span>/<span class="underline">Master</span>
   </div>
