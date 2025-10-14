@@ -22,9 +22,10 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  background-color: #000;
+  background-color: #000; /* fallback */
 }
 
+/* GIF background wrapper */
 body::before {
   content: "";
   position: fixed;
@@ -34,8 +35,8 @@ body::before {
   height: 100%;
   background: url('wallpaper.gif') no-repeat center center fixed;
   background-size: cover;
-  filter: brightness(0.3);
-  z-index: -1;
+  filter: brightness(0.3); /* dim GIF only */
+  z-index: -1; /* behind all content */
   pointer-events: none;
 }
 
@@ -49,6 +50,7 @@ header {
   width: 100%;
 }
 
+/* Beats button */
 .beats-button {
   background: transparent;
   border: 2px solid #00ffff;
@@ -70,6 +72,7 @@ header {
   box-shadow: 0 0 20px #00ffff;
 }
 
+/* Title */
 .title {
   font-family: "Orbitron", sans-serif;
   font-size: 5rem;
@@ -81,47 +84,40 @@ header {
 
 /* === MAIN CONTENT === */
 .main-content {
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: auto minmax(300px, 600px) auto; /* left | center | right */
+  align-items: center;
+  justify-items: center;
+  gap: 50px;
   width: 100%;
   margin-bottom: 80px;
   z-index: 1;
 }
 
-/* Video section wrapper: left text + video + right text */
-.video-section {
-  display: flex;
-  align-items: center; /* vertically aligns side texts with video */
-  gap: 50px; /* horizontal spacing between left, video, right */
-  width: 100%;
-  max-width: 1200px;
-}
-
 /* Side texts */
-.side-text.left,
-.side-text.right {
+.side-text.left {
   font-family: "Arial", "Helvetica", sans-serif;
+  font-size: 6rem;
+  font-weight: 900;
+  color: rgba(255,255,255,0.4);
   writing-mode: vertical-rl;
   transform: rotate(180deg) scaleY(1.2);
   text-align: center;
-  color: rgba(255,255,255,0.4);
-}
-
-.side-text.left {
-  font-size: 6rem;
-  font-weight: 900;
-  /* Keep left text hugging left edge */
-  margin-left: 0;
-  flex-shrink: 0;
+  justify-self: start;
 }
 
 .side-text.right {
-  font-size: 3rem;
+  font-family: "Arial", "Helvetica", sans-serif;
+  font-size: 4rem;
   font-weight: 400;
-  flex-shrink: 0;
+  color: rgba(255,255,255,0.4);
+  writing-mode: vertical-rl;
+  transform: rotate(180deg) scaleY(1.2);
+  text-align: center;
+  justify-self: start;
+  margin-left: 50px; /* distance from video */
 }
 
-.side-text.left .underline,
 .side-text.right .underline {
   text-decoration: underline;
   text-decoration-thickness: 3px;
@@ -134,6 +130,7 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-self: center;
 }
 
 /* Video */
@@ -188,7 +185,7 @@ footer {
 @media screen and (max-width: 900px) {
   .side-text.left,
   .side-text.right {
-    display: none;
+    display: none; /* hide side texts */
   }
   video {
     width: 60vmin;
@@ -203,16 +200,26 @@ footer {
 }
 
 @media screen and (max-width: 600px) {
-  .video-section {
-    flex-direction: column;
-    gap: 20px;
-    align-items: center;
-  }
   video {
     width: 50vmin;
   }
   .title {
     font-size: 3rem;
+  }
+  .main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px; /* space between video sections */
+  }
+  .video-wrapper {
+    width: 100%;
+    text-align: center;
+  }
+  .song-title {
+    margin: 0 auto;
+    text-align: center;
   }
   .beats-button {
     font-size: 0.9rem;
@@ -225,69 +232,63 @@ footer {
 
 <header>
   <button class="beats-button" onclick="window.open('https://www.youtube.com/@SeekTheLooper/videos','_blank')">🔗 Beats</button>
-  <h1 class="title">SeektheLooper</h1>
+  <h1 class="title">Seek the Looper</h1>
 </header>
 
 <!-- First song -->
 <div class="main-content">
-  <div class="video-section">
-    <div class="side-text left">Portfolio</div>
-    <div class="video-wrapper">
-      <video controls controlsList="nofullscreen" preload="metadata" poster="cover.jpg">
-        <source src="Video.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-      <div class="song-title">
-        Tiri - Jaila Busy Tme (Mixed & Mastered by Me)
-        <br />
-        <a href="https://www.youtube.com/watch?v=LRCyn03um3o" target="_blank" class="youtube-link">Stream on YouTube</a>
-      </div>
+  <div class="side-text left">Portfolio</div>
+  <div class="video-wrapper">
+    <video controls controlsList="nofullscreen" preload="metadata" poster="cover.jpg">
+      <source src="Video.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+    <div class="song-title">
+      Tiri - Jaila Busy Tme (Mixed & Mastered by Me)
+      <br />
+      <a href="https://www.youtube.com/watch?v=LRCyn03um3o" target="_blank" class="youtube-link">Stream on YouTube</a>
     </div>
-    <div class="side-text right">
-      <span class="underline">Mix</span>/<span class="underline">Master</span>
-    </div>
+  </div>
+  <div class="side-text right">
+    <span class="underline">Mix</span>/<span class="underline">Master</span>
   </div>
 </div>
 
 <!-- Second song -->
 <div class="main-content">
-  <div class="video-section">
-    <div class="side-text left">Portfolio</div>
-    <div class="video-wrapper">
-      <video controls controlsList="nofullscreen" preload="metadata" poster="cover2.jpg">
-        <source src="Emotions.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-      <div class="song-title">
-        SeektheLooper - Emotions (Writer, Performer, Producer, Mixer, Master)
-        <br />
-        <a href="https://www.youtube.com/watch?v=jCxLDvkrPbI" target="_blank" class="youtube-link">Stream on YouTube</a>
-      </div>
+  <div class="side-text left">Portfolio</div>
+  <div class="video-wrapper">
+    <video controls controlsList="nofullscreen" preload="metadata" poster="cover2.jpg">
+      <source src="Emotions.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+    <div class="song-title">
+      SeektheLooper - Emotions (Writer, Performer, Producer, Mixer, Master)
+      <br />
+      <a href="https://www.youtube.com/watch?v=jCxLDvkrPbI" target="_blank" class="youtube-link">Stream on YouTube</a>
     </div>
-    <div class="side-text right">
-      <span class="underline">Produce</span>/<span class="underline">Mix</span>/<span class="underline">Master</span>
-    </div>
+  </div>
+  <div class="side-text right">
+    <span class="underline">Produce</span>/<span class="underline">Mix</span>/<span class="underline">Master</span>
   </div>
 </div>
 
 <!-- Third song -->
 <div class="main-content">
-  <div class="video-section">
-    <div class="side-text left">Portfolio</div>
-    <div class="video-wrapper">
-      <video controls controlsList="nofullscreen" preload="metadata" poster="cover3.jpg">
-        <source src="lost.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-      <div class="song-title">
-        SeektheLooper - I'm So Lost (Writer, Performer, Producer, Mixer, Master)
-        <br />
-        <a href="https://www.youtube.com/watch?v=6KbBDFXOw5I" target="_blank" class="youtube-link">Stream on YouTube</a>
-      </div>
+  <div class="side-text left">Portfolio</div>
+  <div class="video-wrapper">
+    <video controls controlsList="nofullscreen" preload="metadata" poster="cover3.jpg">
+      <source src="lost.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+    <div class="song-title">
+      SeektheLooper - I'm So Lost (Writer, Performer, Producer, Mixer, Master)
+      <br />
+      <a href="https://www.youtube.com/watch?v=6KbBDFXOw5I" target="_blank" class="youtube-link">Stream on YouTube</a>
     </div>
-    <div class="side-text right">
-      <span class="underline">Produce</span>/<span class="underline">Mix</span>/<span class="underline">Master</span>
-    </div>
+  </div>
+  <div class="side-text right">
+    <span class="underline">Produce</span>/<span class="underline">Mix</span>/<span class="underline">Master</span>
   </div>
 </div>
 
