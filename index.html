@@ -82,19 +82,19 @@ header {
 /* === MAIN CONTENT === */
 .main-content {
   display: flex;
-  align-items: flex-start;
   justify-content: center;
-  gap: 50px;
-  margin-bottom: 80px;
   width: 100%;
+  margin-bottom: 80px;
   z-index: 1;
 }
 
-/* Video section wrapper */
+/* Video section wrapper: left text + video + right text */
 .video-section {
   display: flex;
-  align-items: center; /* aligns left & right texts with video */
-  gap: 20px; /* spacing between left-text, video, right-text */
+  align-items: center; /* vertically aligns side texts with video */
+  gap: 50px; /* horizontal spacing between left, video, right */
+  width: 100%;
+  max-width: 1200px;
 }
 
 /* Side texts */
@@ -110,15 +110,19 @@ header {
 .side-text.left {
   font-size: 6rem;
   font-weight: 900;
+  /* Keep left text hugging left edge */
+  margin-left: 0;
+  flex-shrink: 0;
 }
 
 .side-text.right {
   font-size: 3rem;
   font-weight: 400;
+  flex-shrink: 0;
 }
 
-.side-text.right .underline,
-.side-text.left .underline {
+.side-text.left .underline,
+.side-text.right .underline {
   text-decoration: underline;
   text-decoration-thickness: 3px;
   text-underline-offset: 6px;
@@ -202,6 +206,7 @@ footer {
   .video-section {
     flex-direction: column;
     gap: 20px;
+    align-items: center;
   }
   video {
     width: 50vmin;
@@ -220,7 +225,7 @@ footer {
 
 <header>
   <button class="beats-button" onclick="window.open('https://www.youtube.com/@SeekTheLooper/videos','_blank')">🔗 Beats</button>
-  <h1 class="title">Seek the Looper</h1>
+  <h1 class="title">SeektheLooper</h1>
 </header>
 
 <!-- First song -->
