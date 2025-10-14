@@ -6,13 +6,9 @@
 <title>Seek the Looper | Portfolio</title>
 
 <!-- Google Fonts -->
-<link
-href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Inter:wght@400;600&display=swap"
-rel="stylesheet"
-/>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet"/>
 
 <style>
-/* Body with faded GIF background */
 body {
   margin: 0;
   min-height: 100vh;
@@ -20,7 +16,7 @@ body {
   background-size: cover;
   font-family: "Inter", sans-serif;
   overflow-x: hidden;
-  overflow-y: auto; /* vertical scroll */
+  overflow-y: auto;
   color: #fff;
   position: relative;
 }
@@ -29,10 +25,8 @@ body {
 body::before {
   content: "";
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
   background-color: rgba(0, 0, 0, 0.7);
   z-index: 0;
 }
@@ -74,27 +68,33 @@ footer {
   font-size: 5rem;
   color: #00ffff;
   text-align: center;
-  text-shadow:
-    0 0 5px #00ffff,
-    0 0 10px #00ffff,
-    0 0 20px #00ffff,
-    0 0 40px #00ffff;
+  text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 40px #00ffff;
   margin-bottom: 50px;
 }
 
-/* Grid-based main content for perfect alignment */
+/* Main container for each song */
 .main-content {
-  display: grid;
-  grid-template-columns: auto 1fr auto; /* left | center | right */
-  align-items: center; /* vertical alignment */
-  justify-items: center; /* horizontal alignment in each column */
-  gap: 50px; /* spacing between columns */
-  width: 100%;
-  margin-bottom: 80px; /* space between songs */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 80px;
 }
 
-/* Vertical side texts */
-.side-text {
+/* Left side text */
+.side-text.left {
+  font-family: "Arial", "Helvetica", sans-serif;
+  font-size: 6rem;
+  font-weight: 900;
+  color: rgba(255,255,255,0.4);
+  writing-mode: vertical-rl;
+  transform: rotate(180deg) scaleY(1.2);
+  text-align: center;
+  margin-right: 50px; /* spacing between left text and video */
+}
+
+/* Right side text */
+.side-text.right {
   font-family: "Arial", "Helvetica", sans-serif;
   font-size: 4rem;
   font-weight: 400;
@@ -102,19 +102,11 @@ footer {
   writing-mode: vertical-rl;
   transform: rotate(180deg) scaleY(1.2);
   text-align: center;
+  margin-left: 50px; /* spacing between video and right text */
 }
 
-.side-text.left {
-  font-size: 6rem;
-  font-weight: 900;
-}
-
-/* Right-side text spacing fix */
-.side-text.right {
-  margin-left: 50px; /* space from the video */
-}
-
-.side-text.right .underline {
+/* Underline style */
+.underline {
   text-decoration: underline;
   text-decoration-thickness: 3px;
   text-underline-offset: 6px;
@@ -169,7 +161,7 @@ video {
 
 /* Footer (email) */
 footer {
-  position: fixed; /* stays in corner while scrolling */
+  position: fixed;
   bottom: 10px;
   right: 15px;
   font-size: 0.9rem;
@@ -179,10 +171,7 @@ footer {
 </head>
 
 <body>
-<!-- Beats Button -->
 <button class="beats-button" onclick="window.open('https://www.youtube.com/@SeekTheLooper/videos', '_blank')">🔗 Beats</button>
-
-<!-- Title -->
 <h1 class="title">Seek the Looper</h1>
 
 <!-- First song -->
@@ -194,16 +183,10 @@ footer {
       <source src="Video.mp4" type="video/mp4" />
       Your browser does not support the video tag.
     </video>
-
     <div class="song-title">
       Tiri - Jaila Busy Tme (Mixed & Mastered by Me)
       <br />
-      <a
-        href="https://www.youtube.com/watch?v=LRCyn03um3o"
-        target="_blank"
-        class="youtube-link"
-        >Stream on YouTube</a
-      >
+      <a href="https://www.youtube.com/watch?v=LRCyn03um3o" target="_blank" class="youtube-link">Stream on YouTube</a>
     </div>
   </div>
 
@@ -221,16 +204,10 @@ footer {
       <source src="Emotions.mp4" type="video/mp4" />
       Your browser does not support the video tag.
     </video>
-
     <div class="song-title">
       Emotions – Seek the Looper (Writer, Performer, Producer, Mixer, Master)
       <br />
-      <a
-        href="https://www.youtube.com/watch?v=jCxLDvkrPbI"
-        target="_blank"
-        class="youtube-link"
-        >Stream on YouTube</a
-      >
+      <a href="https://www.youtube.com/watch?v=jCxLDvkrPbI" target="_blank" class="youtube-link">Stream on YouTube</a>
     </div>
   </div>
 
