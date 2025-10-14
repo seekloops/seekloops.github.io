@@ -206,14 +206,22 @@ footer {
   .title {
     font-size: 3rem;
   }
-    .video-wrapper {
-    justify-self: center !important;
-    text-align: center;
-    width: 100%;
+     .main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px; /* space between video sections */
   }
+
+  .video-wrapper {
+    width: 100%;
+    text-align: center;
+  }
+
   .song-title {
-    margin-left: 0;
-    margin-right: 0;
+    margin: 0 auto;
+    text-align: center;
   }
   .beats-button {
     font-size: 0.9rem;
